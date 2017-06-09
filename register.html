@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hungryhouse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="robots" content="noindex,nofollow"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .signInPopupWrapper .accountJoin{width: 430px !important}
+    </style>
+</head>
+
+<body class="bodyAccount bodyHungryhouse desktop" >
+
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+
+<div class="body">
+	<!--头：导航栏--->
+    <div class="topArea">
+        <div class="header">
+            <a class="logo" href="index.html" title="order takeaway online">
+                <span>Hungryhouse.co.uk</span>
+            </a>
+            <!--显示注册和登录按钮-->
+            <div class="userInfo">
+            	<!--显示注册按钮-->
+                <a href="javascript:void(0)">
+                    <span>注册</span>
+                </a>
+				<!--显示登录按钮-->
+                <a href="login.html" class="guestJoinButton">
+                    <span>登录</span>
+                </a>
+            </div>
+            <!--<div id="header-message" class="larger">
+                <span>Order Takeaway Online!</span>
+            </div>-->
+        </div>
+    </div>
+
+	<!--身体-->
+    <div id="main-container">
+        <div id="maincontent-start"></div>
+        <!-- Start body -->
+        <div id="maincontent">
+            <div class="signInPopupWrapper signInWrapperNew signInWrapperNewForJQ clearfix">
+                <div id="popup-tpl" class="accountJoin">
+                    <i class="icon-logo-hh hhLogoTop"></i>
+                    <p class="headline" style="text-align: center">
+                        <i class="icon-login-user"></i>
+                        &nbsp;<strong >注册新账号</strong>
+                    </p>
+					<!--注册表单-->
+                    <form >
+                        <fieldset class="login flexItem half">
+                        	<!--用户名-->
+                        	<input autocapitalize="off" autocomplete="off" autocorrect="off" type="text" 
+                                   name="firstname" placeholder="用户名" required />
+                            <!--邮箱-->
+                            <input autocapitalize="off" autocomplete="off" autocorrect="off" type="email"
+                                   name="emailaddress" placeholder="邮箱地址" required/>
+                            <!--密码-->
+                            <input autocapitalize="off" autocomplete="off" autocorrect="off" type="password"
+                                   name="password" placeholder="密码" required/>
+                            <!--手机号-->
+							<input autocapitalize="off" autocomplete="off" autocorrect="off" type="text" 
+                            	   name="phone"	placeholder="手机号码" required tabindex="3"  style="width: 70%;"/>
+                            <!--验证码-->
+                            <div>
+								<input autocapitalize="off" autocomplete="off" autocorrect="off" type="text" 
+                            	placeholder="请输入验证码" required style="width: 60%;"/>
+                            	<!--点击发送验证码-->
+                            	<button style="width: 35%;float: right;" >发送验证码</button>
+							</div>
+							<!--注册按钮-->
+                            <button type="submit" class="ctaBtn green button--green" tabindex="5">
+                            	注册
+                            </button>
+                        </fieldset>
+                       <!-- <div class="options flexItem half signUpBackground"></div>-->
+                    </form>
+                </div>
+            </div> <!-- end maincontent -->
+            <div class="clear"></div>
+            <!-- End body -->
+            <div id="maincontent-end"></div>
+        </div> <!-- end main-container -->
+    </div>
+</div>
+
+</body>
+</html>
