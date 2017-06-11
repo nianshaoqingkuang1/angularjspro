@@ -920,7 +920,7 @@ footer {
       display: table; }
     @media screen and (min-width: 40em) {
       footer .footer-links {
-        margin-left: 12.71973%; } }
+        margin-left: 0%; } }
   footer ul {
     margin-bottom: 3em;
     padding: 0;
@@ -1232,7 +1232,7 @@ footer {
       display: table; }
     @media screen and (min-width: 40em) {
       footer .footer-links {
-        margin-left: 12.71973%; } }
+        margin-left: -30%; } }
   footer ul {
     margin-bottom: 3em;
     padding: 0;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="registerControllerModule">
 <head>
    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <title>饿了么</title>
@@ -11,10 +11,11 @@
         .topArea{background-color: #0391e6;}
         .logo{background: url("images/elm1.png") no-repeat;width: 121px;height: 121px;margin-top: -15px;}
         .hhLogoTop{background: url("images/elm2.jpg") no-repeat;width:100px;  height: 80px;}
+        [ng-cloak]{display: none;}
     </style>
 </head>
 
-<body class="bodyAccount bodyHungryhouse desktop" >
+<body class="bodyAccount bodyHungryhouse desktop" ng-controller="registerController" ng-cloak>
 
 <div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
 
@@ -95,4 +96,7 @@
 </div>
 
 </body>
+<script src="js/angular.js"></script>
+<script src="js/controller/registerController.js"></script>
+
 </html>
