@@ -7,7 +7,6 @@ app.directive("footerHtml",function () {
         restrict:"AE",
         replace:true,
         templateUrl:"footer.html"
-
     }
 
 })

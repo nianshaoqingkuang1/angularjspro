@@ -11,6 +11,22 @@ app.controller("indexController",["$scope","indexService",function ($scope,index
         searchKey : null,//查询关键字
         cuisine : null//查询下拉条件
     }
+    var dinerInfoStr = localStorage.getItem("dinerInfo");
+    if(dinerInfoStr !="" && dinerInfoStr !=null){
+        //将JSON串转为JSON对象
+        try{
+            var dinerInfoObj = JSON.parse(dinerInfoStr);
+            if(dinerInfoObj.dinerId>0 && !isNaN(dinerInfoObj.dinerId)){
+                $scope.isLogin = true;
+
+            }
+        }catch(e){
+            console.log(e) ;
+        }
+
+
+
+    }
 
     //获取下拉菜单
     indexService.getCuisineMenu()
@@ -29,11 +45,11 @@ app.controller("indexController",["$scope","indexService",function ($scope,index
     var resName = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace,
         queryTokenizer: Bloodhound.tokenizers.whitespace,// 对查询关键字进行切词的分词器
-        prefetch: 'http://iservice.itshsxt.com/restaurant/load_all_names?callback=?', // 初始化原创数据的url
+        prefetch: 'http://iservice.itshsxt.com/restaurant/load_all_names?callback=?' // 初始化原创数据的url
     })
     //创建datasets
     $scope.datasets={
-        source:resName,
+        source:resName
     }
 
     //搜索
@@ -42,6 +58,12 @@ app.controller("indexController",["$scope","indexService",function ($scope,index
         sessionStorage.setItem("params",JSON.stringify( $scope.searchFrom));
         //跳转到list.html
         window.location.href = "list.html";
+
+    }
+    //退出
+    $scope.logout = function () {
+        localStorage.removeItem("dinerInfo");
+        $scope.isLogin = false;
 
     }
 
