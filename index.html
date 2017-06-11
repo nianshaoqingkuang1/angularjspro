@@ -2,24 +2,28 @@
 <html ng-app="indexControllerModule">
 <head>
     <meta charset="utf-8">
-    <title>Love Takeaway | hungryhouse</title>
+    <title>饿了么</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="./css/main.css"/>
+	<style>
+		.logo-kobe{display: block;margin-left: 20px;}
+		[ng-cloak]{display: none}
+	</style>
 </head>
-<body class="homepage homeGuest" ng-controller="indexController">
+<body class="homepage homeGuest" ng-controller="indexController" ng-cloak="">
 	<!--头部-->
 	<header>
 	    <nav class="homepage">
 	    	<!--logo-->
-	        <a class="logo--homepage" href="#"><h2>hungryhouse.co.uk</h2></a>
+	      <!--  <a class="logo homepage" href="#"><h2>hungryhouse.co.uk</h2></a>-->
 	        <!--未登录时，显示-->
 	        <ul ng-show="!isLogin">
             	<!--注册按钮，点击回到注册页面-->
 	            <li>
 	                <a href="./register.html"
-			            data-tooltip="Members benefit from a better Checkout experience, but it's also possible to order as a guest without creating an account."
+			            data-tooltip="注册会员可以更好的享受服务，但您也可以在不注册会员的情况下来享受服务。"
 			            class="fancyOpen tooltip button--small--transparent">
 	                    注册
 	                </a>
@@ -47,16 +51,20 @@
 			</ul>
 	    </nav>
 	    <!--  dynamic search form-->
+		<img src="images/image_kobe.png" class="logo-kobe">
 	    <section class="homepage-search">
-	        <h1 class="highlight-red">Love Takeaway.</h1>
-	        <!--搜索条件表单-->
+	        <!--<h1 class="highlight-red">Love Takeaway.</h1>-->
+			<h1><img src="images/elmlogo.png" alt=""></h1>
+			<!--<img src="images/image_kobe.png" >-->
+
+			<!--搜索条件表单-->
 	        <form class="cuisineChoose searchtool--homepage" >
 	            <ol>
                     <!--下拉菜单，搜索条件-->
 	                <li>
 	                    <label for="cuisine-select">全部...</label>
-	                    <select >
-	                        <option value="">All cuisines</option>
+	                    <select ng-model="searchFrom.cuisine">
+	                        <option value="">所有菜系</option>
 	                        <option ng-repeat="cuisine in cuisines" ng-value="cuisine">{{cuisine}}</option>
 	                    </select>
 	                    <div class="arrow-select"><span class="icon-arrow-down"></span></div>
@@ -64,11 +72,11 @@
 	                <!--输入框，搜索条件-->
 	                <li>
 	                    <label for="post-code-input">餐厅...</label>
-	                    <input type="search" placeholder="e.g. Goodfellas"  />
+	                    <input type="search" placeholder="e.g. Goodfellas" sf-typeahead  datasets="datasets" ng-model="searchFrom.searchKey"/>
 	                </li>
 	                <!--搜索按钮-->
 	                <li>
-	                    <button type="submit" >搜索</button>
+	                    <button type="submit" ng-click="search()" >搜索</button>
 	                </li>
 	            </ol>
 	        </form>
@@ -164,6 +172,10 @@
 	        </li>
 	    </ul>
 	</div>
+
+	<!--脚-->
+	<footer-html></footer-html>
+
 	<img src="https://email.hungryhouse.co.uk/P?emv_client_id=1101073461&emv_conversionflag=Y" border="0" alt=""/>
 
 	<div class="AppC" style="display:none;">
@@ -181,7 +193,11 @@
 	    </a>
 	</div>
 </body>
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/typeahead.bundle.js"></script>
 <script src="js/angular.js"></script>
+<script src="js/angular-typeahead.js"></script>
 <script src="js/controller/indexController.js"></script>
 <script src="js/service/indexService.js"></script>
+<script src="js/directive/footer.js"></script>
 </html>

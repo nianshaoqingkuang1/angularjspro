@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <title>all Takeaways in Fulham, Parson's Green SW6 | hungryhouse</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="description"
@@ -61,7 +61,13 @@
 		  }
 		}
 		[ng-cloak]{display: none;}
-	</style>
+
+        .topArea{background-color: #0391e6;}
+        .logo{background: url("images/elm1.png") no-repeat;width: 121px;height: 121px;margin-top: -15px;}
+        .mainNav{margin:75px -500px 0 0;}
+        #header-message{margin-top: 30px;}
+        .searchBox{margin-left: 70px;}
+    </style>
 </head>
 
 <body class="bodyRestaurants bodyHungryhouse desktop" id="body_website">
@@ -78,10 +84,10 @@
             	<!--未登录时，显示-->
             	<div>
 	                <a href="register.html" class="guestJoinButton">
-	                    <span>Create account</span>
+	                    <span>注册</span>
 	                </a>
 	                <a href="login.html" class="fancyOpen button--small">
-	                    <span>Sign in</span>
+	                    <span>登录</span>
 	                </a>
 	            </div>
 	            <!--登录时，显示-->
@@ -95,18 +101,18 @@
                     <a href="index.html"><span>Home</span></a>
                 </li>
                 <li class="active">
-                    <a title="My Order" href="javascript:void(0)"><span>My Order</span></a>
+                    <a title="My Order" href="javascript:void(0)"><span>网上订餐</span></a>
                 </li>
                 <li>
-                    <a title="Help" href="avascript:void(0)"><span>Contact/Help</span></a>
+                    <a title="Help" href="avascript:void(0)"><span>帮助</span></a>
                 </li>
                 <li>
                     <a title="Order Tracking" href="avascript:void(0)"
-                       class="homeNavOrderTracking"><span>Order Tracking</span></a>
+                       class="homeNavOrderTracking"><span>跟踪订单</span></a>
                 </li>
             </ul>
             <div id="header-message" class="larger">
-                <span>Order Takeaway Online!</span>
+                <span>网上订餐</span>
             </div>
         </div>
     </div>
@@ -123,12 +129,12 @@
                 <form >
                     <div class="searchBar postcodeIsGuessed">
                         <div class="searchBox">
-                            <span class="question">What are you hungry for?</span>
+                            <span class="question">您有什么需要?</span>
                             <div class="searchLayout">
                             	<!--条件输入框-->
-                                <input type="text" placeholder="Enter a dish or restaurant name" class="searchInput"/>
+                                <input type="text" placeholder="输入菜肴或餐馆名称" class="searchInput"/>
                                 <!--搜索按钮-->
-                                <input class="searchButton" type="submit" value="Search"/>
+                                <input class="searchButton" type="submit" value="搜索"/>
                             </div>
                         </div>
                     </div>
@@ -143,19 +149,19 @@
 					<!--搜索条件表单-->
                     <form class="searchFilters">
                         <div class="filtersHeader">
-                            <h3>Filters</h3>
-                            <a href="#" class="clear-filters">clear</a>
+                            <h3>筛选</h3>
+                            <a href="#" class="clear-filters">清除</a>
                         </div>
                         <div class="clear"></div>
                         <!--四个搜索条件-->
                         <div class="cuisines restsFilterBoxCuisines">
                         	<!--菜系搜索条件-->
-                            <h4>Cuisines</h4>
+                            <h4>菜系</h4>
                             <ul>
                                 <li class="activeFilter all">
                                     <label>
                                         <input type="checkbox" name="s[f][cuisine]" value="all" checked="checked"/>
-                                        <span>All Cuisines</span>
+                                        <span>All cuisines</span>
                                     </label>
                                 </li>
                                 <li>
@@ -464,7 +470,7 @@
                         <div id="rests-additional-filters-h">
                         	<!--商圈搜索条件-->
                             <div class="search-filters-specials">
-                                <h4>Neighborhoods</h4>
+                                <h4>附近</h4>
                                 <ul>
                                     <li>
                                         <label>
@@ -487,7 +493,7 @@
                             
                             <!--区域-->
                             <div class="search-filters-service">
-                                <h4>Districts</h4>
+                                <h4>区域</h4>
                                 <ul class="restsFilersList">
                                     <li>
                                         <label>
@@ -512,7 +518,7 @@
                             
                             <!--价格搜索条件-->
                             <div class="restsFilterBox open">
-                                <h4>Price</h4>
+                                <h4>价格</h4>
                                 <ul class="restsFilersList">
                                     <li>
                                         <label>
@@ -548,17 +554,17 @@
                         	<!--排序条件表单-->
                             <div class="sortBy sortByCurrentOnline">
                                 <form>
-                                    <span><h3>Sort By:</h3> </span>
+                                    <span><h3>排序:</h3> </span>
                                     <!--排序条件-->
-                                    <a href="#">Rating</a> | 
-                                    <a href="#" >Price</a>	|
+                                    <a href="#">评价</a> |
+                                    <a href="#" >价格</a>	|
                                     <a href="#" >A - Z</a>
                                 </form>
                             </div>
                             <!--显示搜索结果条数-->
                             <div class="searchResInfo">
                                 <h2>
-					                <span>Showing 267 results</span>
+					                <span>显示 267 条结果</span>
                                 </h2>
                             </div>
                         </div>
