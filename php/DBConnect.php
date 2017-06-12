@@ -96,4 +96,26 @@
 
     }
 
+    //检查用户名是否存在
+    function CheckUseIsEixtWithSQLConnect($username){
+
+        ConnectSQL();
+
+        $sql = "select * from user where username == $username";
+
+        $row=mysql_query($sql);
+
+        if ($row > 0 ){
+
+            return true;
+
+        }
+        else{
+
+            return false;
+        }
+
+        CloseSQL();
+
+    }
 ?>

@@ -67,5 +67,47 @@ app.controller("registerController",["$scope","$interval","indexService",functio
             )
 
     }
+    $scope.lost = function (){
+        var input=document.getElementsByName("firstname")[0];
+        var input_value=input.value;
+        if(input_value==""){
+            /*input.value="请输入用户名";
+             input.style.color="gray";*/
+            //document.write("<p>请输入用户名</p>");
+        }else{
+            //ajax
+            var xhr;
+            //兼容问题
+            if(window.XMLHttpRequest){
+                xhr = new window.XMLHttpRequest();
+            }
+            else{
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhr.open("POST","php/Register.php",true);
+            xhr.send(input_value);
+            xhr.onreadystatechange = function () {
+
+                if (xhr.readyState == 4 && xhr.readyState == 200){
+
+                    var resultCode = xhr.responseText;
+                    //服务器返回0证明没有重复 返回1证明重复
+                    if (resultCode == 1){
+
+                        //在这里显示用户名重复
+                        //document.write()
+                    }
+
+                }
+
+            }
+        }
+    }
+
+    $scope.get = function (){
+        var input=document.getElementsByName("firstname")[0];
+        input.value="";
+        input.style.color="black";
+    }
 
 }])

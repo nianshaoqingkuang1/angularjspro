@@ -16,4 +16,13 @@
 | shoppingcar | varchar(200) | YES  |     | NULL    |       |
 +-------------+--------------+------+-----+---------+-------+
  */
+
+require_once "DBConnect.php";
+
+function CheckUserName($username){
+
+
+}
+
+
 ?>

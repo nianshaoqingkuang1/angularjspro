@@ -62,7 +62,7 @@
                         <fieldset class="login flexItem half">
                         	<!--用户名-->
                         	<input autocapitalize="off" autocomplete="off" autocorrect="off" type="text" 
-                                   name="firstname" placeholder="用户名" required ng-model="signupForm.firstname"/>
+                                   name="firstname" onfocus="get()" onblur="lost()" placeholder="用户名" required ng-model="signupForm.firstname"/>
                             <!--邮箱-->
                             <input autocapitalize="off" autocomplete="off" autocorrect="off" type="email"
                                    name="emailaddress" placeholder="邮箱地址" required ng-model="signupForm.email"/>
