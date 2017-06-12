@@ -62,25 +62,25 @@
                         <fieldset class="login flexItem half">
                         	<!--用户名-->
                         	<input autocapitalize="off" autocomplete="off" autocorrect="off" type="text" 
-                                   name="firstname" placeholder="用户名" required />
+                                   name="firstname" placeholder="用户名" required ng-model="signupForm.firstname"/>
                             <!--邮箱-->
                             <input autocapitalize="off" autocomplete="off" autocorrect="off" type="email"
-                                   name="emailaddress" placeholder="邮箱地址" required/>
+                                   name="emailaddress" placeholder="邮箱地址" required ng-model="signupForm.email"/>
                             <!--密码-->
                             <input autocapitalize="off" autocomplete="off" autocorrect="off" type="password"
-                                   name="password" placeholder="密码" required/>
+                                   name="password" placeholder="密码" required ng-model="signupForm.password"/>
                             <!--手机号-->
 							<input autocapitalize="off" autocomplete="off" autocorrect="off" type="text" 
-                            	   name="phone"	placeholder="手机号码" required tabindex="3"  style="width: 70%;"/>
+                            	   name="phone"	placeholder="手机号码" required tabindex="3"  style="width: 70%;" ng-model="signupForm.phone"/>
                             <!--验证码-->
                             <div>
 								<input autocapitalize="off" autocomplete="off" autocorrect="off" type="text" 
-                            	placeholder="请输入验证码" required style="width: 60%;"/>
+                            	placeholder="请输入验证码" required style="width: 60%;" ng-model="signupForm.verifyCode"/>
                             	<!--点击发送验证码-->
-                            	<button style="width: 35%;float: right;" >发送验证码</button>
+                            	<button style="width: 35%;float: right;" ng-click="sendVerifyCode()" ng-disabled="clicked">{{title}}</button>
 							</div>
 							<!--注册按钮-->
-                            <button type="submit" class="ctaBtn green button--green" tabindex="5">
+                            <button type="submit" class="ctaBtn green button--green" tabindex="5" ng-click="signup()">
                             	注册
                             </button>
                         </fieldset>
@@ -94,9 +94,12 @@
         </div> <!-- end main-container -->
     </div>
 </div>
+<footer-html></footer-html>
 
 </body>
 <script src="js/angular.js"></script>
 <script src="js/controller/registerController.js"></script>
+<script src="js/service/indexService.js"></script>
+<script src="js/directive/footer.js"></script>
 
 </html>
